@@ -16,7 +16,7 @@ import butaca from './butaca.png'
 import luces from './luces.png'
 import bujes from './bujes.png'
 
-export default {
+const productsImges = {
     'acumulador': acumulador,
     'alternador': alternador,
     'amortiguadores': amortiguadores,
@@ -35,3 +35,4 @@ export default {
     'luces': luces,
     'bujes': bujes
 }
+export default productsImges

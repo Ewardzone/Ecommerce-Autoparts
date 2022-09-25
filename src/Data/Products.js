@@ -1,24 +1,24 @@
-import ProductsImg from "../components/Assets/Img/Products/ProductsImg";
+import productsImges from "../components/Assets/Img/Products/ProductsImg";
 
 export const products = [
   {
     id: 1,
     title: "Acumulador",
-    img: ProductsImg.acumulador,
+    img: productsImges.acumulador,
     price: "30.000",
     category: "Electricidad",
   },
   {
     id: 2,
     title: "Alternador",
-    img: ProductsImg.alternador,
+    img: productsImges.alternador,
     price: "72.000",
     category: "Electricidad",
   },
   {
     id: 3,
     title: "Amortiguadores",
-    img: ProductsImg.amortiguadores,
+    img: productsImges.amortiguadores,
     desc: "Audi A4",
     price: "49.500",
     category: "Suspension",
@@ -26,14 +26,14 @@ export const products = [
   {
     id: 4,
     title: "Pistones",
-    img: ProductsImg.pistones,
+    img: productsImges.pistones,
     price: "138.000",
     category: "Motor",
   },
   {
     id: 5,
     title: "Yokohama 17''",
-    img: ProductsImg.yokohama,
+    img: productsImges.yokohama,
     desc: "205/45 R17",
     price: 750,
     category: "Neumaticos",
@@ -41,7 +41,7 @@ export const products = [
   {
     id: 6,
     title: "Capot Fibra de Carbono",
-    img: ProductsImg.capot,
+    img: productsImges.capot,
     desc: "Subaru Impreza",
     price: 990,
     category: "BodyParts",
@@ -49,7 +49,7 @@ export const products = [
   {
     id: 7,
     title: "Discos Transmisión Automática",
-    img: ProductsImg.discos,
+    img: productsImges.discos,
     desc: "Camaro Classic",
     price: 10,
     category: "Transmision",
@@ -57,14 +57,14 @@ export const products = [
   {
     id: 8,
     title: "Alarma Viper",
-    img: ProductsImg.alarma,
+    img: productsImges.alarma,
     price: "15.000",
     category: "Accesorios",
   },
   {
     id: 9,
     title: "Cables de Bujías",
-    img: ProductsImg.cables,
+    img: productsImges.cables,
     desc: "Cadillac Escalade",
     price: "800",
     category: "Electricidad",
@@ -72,7 +72,7 @@ export const products = [
   {
     id: 10,
     title: "Espirales cortos",
-    img: ProductsImg.espirales,
+    img: productsImges.espirales,
     desc: "Nissan Skyline",
     price: "750",
     category: "Suspension",
@@ -80,7 +80,7 @@ export const products = [
   {
     id: 11,
     title: "Cigüeñal",
-    img: ProductsImg.cigueñal,
+    img: productsImges.cigueñal,
     desc: "Toyota FJ Cruiser",
     price: "550",
     category: "Motor",
@@ -88,7 +88,7 @@ export const products = [
   {
     id: 12,
     title: "Goodrich G Force",
-    img: ProductsImg.goodrich,
+    img: productsImges.goodrich,
     desc: "225/45ZR17",
     price: "912",
     category: "Neumaticos",
@@ -96,7 +96,7 @@ export const products = [
   {
     id: 13,
     title: "Puerta Conductor",
-    img: ProductsImg.puerta,
+    img: productsImges.puerta,
     desc: 'Porsche 911 Carrera',
     price: "150",
     category: "BodyParts",
@@ -104,7 +104,7 @@ export const products = [
   {
     id: 14,
     title: "Kit de embrague SKF",
-    img: ProductsImg.embrague,
+    img: productsImges.embrague,
     desc: "Audi A4",
     price: "250",
     category: "Transmision",
@@ -112,7 +112,7 @@ export const products = [
   {
     id: 15,
     title: "Butaca de Carrera",
-    img: ProductsImg.butaca,
+    img: productsImges.butaca,
     desc: "Sparco universal",
     price: "350",
     category: "Accesorios",
@@ -120,7 +120,7 @@ export const products = [
   {
     id: 16,
     title: "Módulos luces HID",
-    img: ProductsImg.luces,
+    img: productsImges.luces,
     desc: "8.000K",
     price: "400",
     category: "Electricidad",
@@ -128,7 +128,7 @@ export const products = [
   {
     id: 17,
     title: "Bujes estabilizador delantero",
-    img: ProductsImg.bujes,
+    img: productsImges.bujes,
     desc: "Mercedes Clase E",
     price: "425",
     category: "Suspension",
