@@ -35,7 +35,7 @@ export const Card = styled.div`
 `
 
 export const CardImg = styled.img`
-    width: 100px;
+    width: 20vw;
     border-radius: 15px;
 `
 

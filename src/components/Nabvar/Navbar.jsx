@@ -1,35 +1,55 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import {
-  CartNavStyled,
-  LinkContainerStyled,
-  LinksContainerStyled,
-  NavbarContainerStyled,
-  UserNavStyled,
-} from "./NavbarStyles";
 import { HiHome } from "react-icons/hi";
 import { FaShoppingCart, FaUserAlt } from "react-icons/fa";
 import ModalCart from "./ModalCart/ModalCart";
 import ModalUser from "./ModalUser/ModalUser";
-import logo from "../Assets/Img/logo.png"
+import logo from "../Assets/Img/logo.png";
+import { useDispatch, useSelector } from "react-redux";
+import * as cartActions from "../../Redux/Cart/Cart-actions";
+import {
+  CartNavStyled,
+  LinkContainerStyled,
+  ModalOverlayStyled,
+  LinksContainerStyled,
+  NavbarContainerStyled,
+  UserNavStyled,
+} from "./NavbarStyles";
 
 const Navbar = () => {
+  const [openUser, setOpenUser] = useState();
 
-  const [openModal, setOpenModal] = useState()
-  const [openUser, setOpenUser] = useState()
+  const hiddenCart = useSelector((state) => state.cart.hidden);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!hiddenCart) {
+      dispatch(cartActions.toggleHiddenCart());
+    }
+    // eslint-disable-next-line
+  }, [dispatch]);
+
   return (
     <NavbarContainerStyled>
+      {!hiddenCart && (
+        <ModalOverlayStyled
+          onClick={() =>
+            !hiddenCart && dispatch(cartActions.toggleHiddenCart())
+          }
+          isHidden={hiddenCart}
+        />
+      )}
+      <AnimatePresence>{!hiddenCart && <ModalCart />}</AnimatePresence>
+
       <AnimatePresence>
-       {openModal && <ModalCart closeModal={setOpenModal} />}
-       {openUser && <ModalUser closeModal={setOpenUser}/>} 
+        {openUser && <ModalUser closeModal={setOpenUser} />}
       </AnimatePresence>
-      
+
       <div>
         <Link to="/">
-          <img
-            src={logo} alt= "logo"
-          />
+          <img src={logo} alt="logo" />
         </Link>
       </div>
       <LinksContainerStyled>
@@ -41,24 +61,17 @@ const Navbar = () => {
         </Link>
         <CartNavStyled>
           <LinkContainerStyled
-          onClick={
-            () => {
-              setOpenModal
-              (true)
-            }
-          }
+          onClick={() => dispatch(cartActions.toggleHiddenCart())}
           >
             <FaShoppingCart />
             <span>1</span>
           </LinkContainerStyled>
         </CartNavStyled>
-        <UserNavStyled
-        closeModal={setOpenModal}
-        >
+        <UserNavStyled>
           <LinkContainerStyled
-          onClick={() => {
-            setOpenUser(!openUser)
-          }}
+            onClick={() => {
+              setOpenUser(!openUser);
+            }}
           >
             <span>Hola! Eduardo</span>
             <FaUserAlt />

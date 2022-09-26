@@ -1,63 +1,80 @@
-import React from "react";
-import { ButtonContainerStyled, CloseButtonStyled, ContainerStyled, EnviosStyled, PriceContainerStyled, PriceStyled, ProductContainerStyled, SubtotalStyled, TitleStyled, TotalStyled } from "./ModalCartStyles";
-import Increase from "../../UI/Increase/Increase";
-import Count from "../../UI/Count/Count";
-import Submit from "../../UI/Submit/Submit";
+import Increase from '../../UI/Increase/Increase';
+import Submit from '../../UI/Submit/Submit';
+import Count from '../../UI/Count/Count';
+import { MdOutlineClose } from 'react-icons/md'
+import { IoMdTrash } from 'react-icons/io'
+import { useDispatch } from 'react-redux';
+import * as cartActions from '../../../Redux/Cart/Cart-actions'
+import {
+CloseButtonContainerStyled,
+  ButtonContainerStyled,
+  CloseButtonStyled,
+  ContainerStyled,
+  EnvioStyled,
+  PriceContainerStyled,
+  PriceStyled,
+  ProductContainerStyled,
+  SubtotalStyled,
+  TitleStyled,
+  TotalStyled,
+  MainContainerStyled,
+  ProductsWrapperStyled
+} from './ModalCartStyles';
 
-const ModalCart = ({closeModal}) => {
+
+const ModalCart = ({ closeModal }) => {
+
+  const dispatch = useDispatch()
+
   return (
-  <ContainerStyled
-    initial={{ translateX: 600 }}
-    animate={{ translateX: 0 }}
-    exit={{ scale: 0 }}
-    transition={{ duration: 0.2 }}
-    key='cart-modal'
-  >
-    <CloseButtonStyled
-    whileTap={{scale:0.95}}
-    onClick={() => closeModal(false)}>
-    X
-    </CloseButtonStyled>
-    <TitleStyled>
+    <ContainerStyled
+      initial={{ translateX: 600 }}
+      animate={{ translateX: 0 }}
+      exit={{ translateX: 600 }}
+      transition={{ duration: 0.5 }}
+      key='cart-modal'
+    >
+    <CloseButtonContainerStyled>
+      <CloseButtonStyled
+        className='close__modal '
+        whileTap={{ scale: 0.95 }}
+        onClick={() => dispatch(cartActions.toggleHiddenCart())}
+      >
+        <MdOutlineClose size='24px'/>
+      </CloseButtonStyled>
+      </CloseButtonContainerStyled>
+      <MainContainerStyled>
+      <TitleStyled>
         <h1>Tus Productos</h1>
-    </TitleStyled>
-    <div>
-        <ProductContainerStyled>
-            <img src="https://www.partsklassik.com/images/Product/large/2711.jpg" alt="CarDoor" />
-            <div>
-                <p>Puerta Derecha</p>
-                <p>Porsche 911 1.973</p>
-                <PriceStyled>$7.500</PriceStyled>
-            </div>
-            <div>
-                <Increase>-</Increase>
-                <Count>1</Count>
-                <Increase secondary>+</Increase>
-            </div>
-        </ProductContainerStyled>
+        <Increase
+            bgColor='#fff05c'
+        >
+            <IoMdTrash/>
+        </Increase>
+      </TitleStyled>
+
+      </MainContainerStyled>
+     
         <PriceContainerStyled>
-            <SubtotalStyled>
-                <p>Subtotal</p>
-                <span>$325.463</span>
-            </SubtotalStyled>
-            <EnviosStyled>
-                <p>Envío</p>
-                <span>Gratis</span>
-            </EnviosStyled>
-            <hr />
-            <TotalStyled>
-                <p>Total</p>
-                <PriceStyled>325.463</PriceStyled>
-            </TotalStyled>
-            <ButtonContainerStyled>
-                <Submit value='Iniciar pedido'/>
-            </ButtonContainerStyled>
+          <SubtotalStyled>
+            <p>Subtotal:</p>
+            <span>$4890</span>
+          </SubtotalStyled>
+          <EnvioStyled>
+            <p>Envio</p>
+            <span>Gratis</span>
+          </EnvioStyled>
+          <hr />
+          <TotalStyled>
+            <p>Total:</p>
+            <PriceStyled>$4890</PriceStyled>
+          </TotalStyled>
+          <ButtonContainerStyled>
+            <Submit> Iniciar pedido </Submit>
+          </ButtonContainerStyled>
         </PriceContainerStyled>
-    </div>
-
-
-  </ContainerStyled>
-  )
+    </ContainerStyled>
+  );
 };
 
 export default ModalCart;

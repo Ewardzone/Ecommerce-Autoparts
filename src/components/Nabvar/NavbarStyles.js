@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import { motion } from 'framer-motion'
 
 export const NavbarContainerStyled = styled.div`
   height: 100px;
@@ -7,6 +8,20 @@ export const NavbarContainerStyled = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 4rem 0.6rem 4rem;
+`;
+
+export const ModalOverlayStyled = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: calc(100vw - 450px);
+  height: 100vh;
+  ${({ isHidden }) =>
+    !isHidden &&
+    css`
+      backdrop-filter: blur(4px);
+    `}
 `;
 
 export const LinksContainerStyled = styled.div`
