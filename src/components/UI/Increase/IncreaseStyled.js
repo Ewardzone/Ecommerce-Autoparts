@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 
 export const IncreaseStyled = styled(motion.button)`
-    background: #1B2247;
+    background: red;
     border: none;
     border-radius: 15px;
     width: 40px;
@@ -16,7 +16,5 @@ export const IncreaseStyled = styled(motion.button)`
     ${({secondary}) =>
         secondary && css`
             background: var(--btn-gradient);
-        `
-
-    }
+        `}
 `
