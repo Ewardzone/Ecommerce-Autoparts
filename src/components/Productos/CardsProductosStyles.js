@@ -38,7 +38,7 @@ export const ContainerPrice = styled.div`
 
 export const CardPrice = styled.span`
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.5rem;
     background: var(--btn-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

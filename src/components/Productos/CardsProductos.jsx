@@ -4,9 +4,9 @@ import CardProducto from "./CardProducto";
 import { useSelector } from "react-redux";
 
 const CardsProductos = ({limit}) => {
-  let products = useSelector((state) => state.products.products);
+  let products = useSelector(state => state.products.products);
   const selectedCategory = useSelector(
-    (state) => state.categories.selectedCategory
+    state => state.categories.selectedCategory
   );
 
   if (selectedCategory) {
@@ -22,9 +22,9 @@ const CardsProductos = ({limit}) => {
             if (limit >= articles.id || selectedCategory) {
               return (
               <CardProducto
-            key={articles.id}
+            id={articles.id}
             title={articles.title}
-            imgSource={articles.img}
+            img={articles.img}
             desc={articles.desc}
             price={articles.price}
           />  

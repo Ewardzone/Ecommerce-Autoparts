@@ -7,7 +7,7 @@ export const NavbarContainerStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 4rem 0.6rem 4rem;
+  padding: 1rem 4rem;
 `;
 
 export const ModalOverlayStyled = styled(motion.div)`
@@ -25,57 +25,58 @@ export const ModalOverlayStyled = styled(motion.div)`
 `;
 
 export const LinksContainerStyled = styled.div`
-    color: white;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  a {
+    padding: 1rem 1.5rem;
+  }
+  a:first-child {
+    background: var(--orange-bg);
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-
-    a {
-        padding: 1rem 1.5rem;
-    }
-
-    a:first-child {
-        background: var(--blue-bg);
-        border-radius: 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-    }
-`
+    gap: 5px;
+  }
+`;
 
 export const LinkContainerStyled = styled.div`
-    font-size: 1.2rem;
-    color: ${props => (props.home ? "#3BBD34" : "#2A3797")};
-`
+  font-size: 1.2rem;
+  color: ${props => (props.home ? '#ff9d01' : '#ff9300')};
+`;
 
 export const CartNavStyled = styled.div`
-    position: relative;
-    cursor: pointer;
+  position: relative;
+  cursor: pointer;
+  span {
+    position: absolute;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 1rem;
+    border: 1px solid white;
+    color: white;
+    background-color: red;
+    font-size: 0.9rem;
+  }
+`;
 
-    span {
-        position: absolute;
-        background: var(--orange);
-        height: 20px;
-        width: 20px;
-        text-align: center;
-        border-radius: 1rem;
-        border: 1px solid white;
-        top: 0;
-        color: white;
-        font-size: 1rem;
-    }
-`
 export const UserNavStyled = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    cursor: pointer;
-    span {
-        color: white;
-        font-size: 1rem;
-        margin-right: 20px;
-    }
-`
+  gap: 15px;
+  cursor: pointer;
+  span {
+    color: white;
+    font-size: 1rem;
+    margin-right: 20px;
+  }
+`;
+
+export const SpanStyled = styled.span`
+  &:hover {
+    text-decoration: underline;
+  }
+`;

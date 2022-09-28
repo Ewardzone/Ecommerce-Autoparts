@@ -24,6 +24,8 @@ const Navbar = () => {
 
   const dispatch = useDispatch();
 
+  const totalCartItems = useSelector(state => state.cart.cartItems).reduce((acc, item) => (acc += item.quantity), 0)
+
   useEffect(() => {
     if (!hiddenCart) {
       dispatch(cartActions.toggleHiddenCart());
@@ -64,7 +66,7 @@ const Navbar = () => {
           onClick={() => dispatch(cartActions.toggleHiddenCart())}
           >
             <FaShoppingCart />
-            <span>1</span>
+            <span>{totalCartItems}</span>
           </LinkContainerStyled>
         </CartNavStyled>
         <UserNavStyled>

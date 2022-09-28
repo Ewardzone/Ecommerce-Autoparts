@@ -1,20 +1,21 @@
-import styled, {css} from "styled-components";
-import { motion } from "framer-motion";
-
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const IncreaseStyled = styled(motion.button)`
-    background: red;
-    border: none;
-    border-radius: 15px;
-    width: 40px;
-    height: 40px;
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: white;
-    cursor: pointer;
-
-    ${({secondary}) =>
-        secondary && css`
-            background: var(--btn-gradient);
-        `}
-`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: ${({ bgColor }) => bgColor || 'var(--btn-gradient)'};
+  border: none;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+`;
