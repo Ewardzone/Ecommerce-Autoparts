@@ -1,34 +1,21 @@
 import styled from 'styled-components';
 
-export const InputBoxStyled = styled.div`
+export const InputContainerStyled = styled.div`
   display: flex;
-  margin: 0.5rem 0;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 33vw;
 `;
 
-export const InputLabelStyled = styled.label`
-  display: flex;
-  margin: 0.5 0;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 50%;
-`;
-
-export const InputStyled = styled.input`
-  background-color: var(--gray-bg);
-  outline: none;
-  border: ${({ isError }) => (isError ? '1px solid #fb103d ' : 'none')};
-  border-radius: 8px;
-  height: 30px;
-  padding: 0.5rem 1rem;
+export const LoginInputStyled = styled.input`
+  width: 300px;
+  padding: 1.5rem 2rem;
   color: white;
-  width: 30vw;
+  background-color: var(--gray-bg);
+  border-radius: 15px;
+  border: ${({ isError }) => (isError ? '1px solid #fb103d ' : 'none')};
+  outline: none;
+  caret-color: white;
   ::placeholder {
-    opacity: 60%;
+    opacity: 80%;
   }
   -webkit-text-fill-color: white;
   :-webkit-autofill,

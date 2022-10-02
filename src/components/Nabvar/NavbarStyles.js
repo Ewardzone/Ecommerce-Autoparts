@@ -60,7 +60,7 @@ export const CartNavStyled = styled.div`
     border-radius: 1rem;
     border: 1px solid white;
     color: white;
-    background-color: red;
+    background-color: green;
     font-size: 0.9rem;
   }
 `;
